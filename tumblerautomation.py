@@ -58,7 +58,7 @@ def main():
     state = 'queue' #posting to tumblr post queue, as opposed to live posts
     post_number = 3 #how many posts to upload at a time
 
-    # Read the configuration file and extract varibables
+    # Read the configuration file and extract variables
     with open(tumblr_auth_json, 'r') as f:
         config = json.load(f)
     consumer_key = config['consumer_key']
@@ -74,9 +74,9 @@ def main():
     with open(metadata_json, 'r') as f:
         metadata = json.load(f)
         
-    #post this many posts       
+    #post this number of posts (set post_number variable)       
     for i in range(post_number):
-        #pick randome tags  
+        #pick random tags  
         tags = pick_random_tag(metadata['tags'], 3)
         
         # Retrieve an unused caption
@@ -86,7 +86,7 @@ def main():
         
         #retrieve an unused image
         image = pick_unused_image(photo_folder, metadata["used_images"])
-        # Update the "used_captions" array 
+        # Update the "used_images" array 
         metadata["used_images"].extend([image])
         # Construct full path
         data = f"{photo_folder}\\{image}"
