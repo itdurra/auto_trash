@@ -54,7 +54,7 @@ def main():
     tumblr_auth_json = '.\\tumblr_auth.json'
     metadata_json = '.\\metadata.json'
     photo_folder = '.\\images'
-    blogname = '' #example: xxx@tumblr.com
+    blogname = '' #example: xxx.tumblr.com
     state = 'queue' #posting to tumblr post queue, as opposed to live posts
     post_number = 3 #how many posts to upload at a time
 
